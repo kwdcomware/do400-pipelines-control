@@ -45,6 +45,22 @@ when { expression { params.RUN_FRONTEND_TESTS } }
  }
 
  }
+stage('Deploy') {
+
+ when {
+
+ expression { env.GIT_BRANCH == 'origin/main' }
+
+ }
+
+ steps {
+
+ echo 'Deploying...'
+
+ }
+
+ }
+
 
 
  }
